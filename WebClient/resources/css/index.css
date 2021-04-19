@@ -1,0 +1,30 @@
+body {
+  overflow: hidden;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background-color: #fff;
+}
+
+.title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+/* Map */
+
+.map-container {
+  padding: 0px;
+  height:100vh;
+}
+
+#map {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
