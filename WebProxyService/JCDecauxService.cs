@@ -1,24 +1,23 @@
 ﻿using System;
+using Cache;
 
 namespace WebProxyService
 {
     // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom de classe "JCDecauxService" à la fois dans le code et le fichier de configuration.
     public class JCDecauxService : IJCDecauxService
     {
-        readonly ProxyCache<ListStation> listStationCache = new ProxyCache<ListStation>(600);
+        readonly Cache<ListStation> listStationCache = new Cache<ListStation>(600);
         public Position GetNearestStationStartCoordinates(Position position)
         {
-            String contract = "nantes";
-            ListStation listStation = listStationCache.Get(contract);
-            if (listStation == null) {
-                listStation = new ListStation(contract);
-                listStationCache.Set(contract, listStation);
-            }
-            Station station = listStation.GetNearest(position, true, false);
-            return station.position;
+            return GetNearestStationCoordinates(position, true);
         }
 
         public Position GetNearestStationEndCoordinates(Position position)
+        {
+            return GetNearestStationCoordinates(position, false);
+        }
+
+        private Position GetNearestStationCoordinates(Position position, bool isStart)
         {
             String contract = "nantes";
             ListStation listStation = listStationCache.Get(contract);
@@ -27,7 +26,7 @@ namespace WebProxyService
                 listStation = new ListStation(contract);
                 listStationCache.Set(contract, listStation);
             }
-            Station station = listStation.GetNearest(position, false, true);
+            Station station = isStart ? listStation.GetNearest(position, true, false) : listStation.GetNearest(position, false, true);
             return station.position;
         }
     }

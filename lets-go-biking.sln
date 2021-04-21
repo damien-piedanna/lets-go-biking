@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingWithBikes", "Routing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProxyService", "WebProxyService\WebProxyService.csproj", "{547F2644-86E5-4228-A941-49813D61719B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cache", "Cache\Cache.csproj", "{605E5FB2-DE74-416B-9632-78DF064E71BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{547F2644-86E5-4228-A941-49813D61719B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{547F2644-86E5-4228-A941-49813D61719B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{547F2644-86E5-4228-A941-49813D61719B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{605E5FB2-DE74-416B-9632-78DF064E71BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{605E5FB2-DE74-416B-9632-78DF064E71BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{605E5FB2-DE74-416B-9632-78DF064E71BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{605E5FB2-DE74-416B-9632-78DF064E71BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

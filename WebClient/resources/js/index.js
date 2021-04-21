@@ -9,6 +9,25 @@
       center: [43.5526, 7.0228], //Cannes
       zoom: 13,
     })
+    $('#btnItinerary').click(function() {
+      let inputStart = $('#inputStart').val();
+      let inputEnd = $('#inputEnd').val();
+
+      if (inputStart == "" || inputEnd == "") {
+        alert("Input vide");
+      }
+      let url = "http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/rest/itinerary?start=" + inputStart + "&end=" + inputEnd;
+      $.ajax({
+          type: "GET",
+          url: url,
+          success: function (data) {
+            let result = data.GetItineraryResult;
+
+            console.log(data.GetItineraryResult.itineraries[0].featureCollection);
+            L.geoJSON(data.GetItineraryResult.itineraries[0].featureCollection).addTo(map);
+          }
+      });
+    });
   });
 
   /**

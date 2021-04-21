@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.Device.Location;
 using System.Runtime.Serialization;
+using Cache;
 
 namespace WebProxyService
 {
@@ -17,10 +18,10 @@ namespace WebProxyService
     public class Position
     {
         [DataMember]
-        public float latitude { get; set; }
+        public double latitude { get; set; }
 
         [DataMember]
-        public float longitude { get; set; }
+        public double longitude { get; set; }
     }
     public class Totalstands
     {
@@ -71,9 +72,9 @@ namespace WebProxyService
 
     public class ListStation : JCDecauxObject
     {
-        private String contract;
+        private readonly string contract;
         private List<Station> stations = new List<Station>();
-        private ProxyCache<Station> stationsDetailsCache = new ProxyCache<Station>(60);
+        private readonly Cache<Station> stationsDetailsCache = new Cache<Station>(60);
 
         public ListStation(String contract) {
             this.contract = contract;

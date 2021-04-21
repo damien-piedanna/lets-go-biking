@@ -23,10 +23,10 @@ namespace RoutingWithBikes.WebProxyService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float latitudeField;
+        private double latitudeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float longitudeField;
+        private double longitudeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39,7 +39,7 @@ namespace RoutingWithBikes.WebProxyService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public float latitude {
+        public double latitude {
             get {
                 return this.latitudeField;
             }
@@ -52,7 +52,7 @@ namespace RoutingWithBikes.WebProxyService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public float longitude {
+        public double longitude {
             get {
                 return this.longitudeField;
             }
