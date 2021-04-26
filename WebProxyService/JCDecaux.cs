@@ -22,6 +22,9 @@ namespace WebProxyService
 
         [DataMember]
         public double longitude { get; set; }
+
+        [DataMember]
+        public string city { get; set; }
     }
     public class Totalstands
     {
@@ -92,11 +95,16 @@ namespace WebProxyService
                     stations = JsonSerializer.Deserialize<List<Station>>(responseBody);
                 }
             }
-            catch (HttpRequestException e)
+            catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine("\nException Caught!");
                 System.Diagnostics.Debug.WriteLine("Message :{0} ", e.Message);
             }
+        }
+
+        public bool isEmpty()
+        {
+            return stations.Count == 0;
         }
 
         public Station RefreshStation(int number)
@@ -120,7 +128,7 @@ namespace WebProxyService
 
         public Station GetNearest(Position position, bool needBike, bool needSlot)
         {
-            GeoCoordinate coord = new GeoCoordinate(position.longitude, position.latitude);
+            GeoCoordinate coord = new GeoCoordinate(position.latitude, position.longitude);
 
             Station nearestStation = null;
             double bestDistance = 0;
@@ -158,7 +166,6 @@ namespace WebProxyService
                 {
                     remainingStations.Remove(nearestStation);
                     if (remainingStations.Count == 0) {
-                        System.Diagnostics.Debug.WriteLine("No station available");
                         return null;
                     }
                 }

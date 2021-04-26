@@ -19,14 +19,19 @@ namespace WebProxyService
 
         private Position GetNearestStationCoordinates(Position position, bool isStart)
         {
-            String contract = "nantes";
+            String contract = position.city.ToLower();
             ListStation listStation = listStationCache.Get(contract);
             if (listStation == null)
             {
                 listStation = new ListStation(contract);
                 listStationCache.Set(contract, listStation);
             }
+            if (listStation.isEmpty())
+            {
+                return null;
+            }
             Station station = isStart ? listStation.GetNearest(position, true, false) : listStation.GetNearest(position, false, true);
+            if (station == null) return null;
             return station.position;
         }
     }
