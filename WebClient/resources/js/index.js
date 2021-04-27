@@ -53,11 +53,9 @@
           success: function (data) {
             let result = data.GetItineraryResult;
             if (result.success) {
-              console.log(result);
-              console.log("nb itineraries : " + result.itineraries.length);
-
               $('#itineraryDuration').html(formatDuration(result.duration));
               $('#itineraryDistance').html(formatDistance(result.distance));
+
               addItineraries(result.itineraries);
             } else {
               displayError(result.errorMsg)
@@ -146,7 +144,6 @@
   * Add a marker to the leaflet map
   */
   function addMarker(latitude, longitude, type, popup) {
-    console.log("addMarker");
     let icon = L.divIcon({
       className: 'custom-div-icon',
       html: "<div class='marker-pin marker-pin-" + type + "'></div><i class='fa'>",

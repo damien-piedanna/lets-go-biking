@@ -61,9 +61,6 @@
     <Compile Include="JCDecauxService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Cache\Cache.csproj">
       <Project>{605e5fb2-de74-416b-9632-78df064e71bf}</Project>
       <Name>Cache</Name>

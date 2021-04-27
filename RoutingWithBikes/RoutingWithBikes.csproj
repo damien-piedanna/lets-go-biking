@@ -62,7 +62,6 @@
     <Compile Include="ItineraryService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="Connected Services\WebProxyService\JCDecauxService.wsdl" />
     <None Include="Connected Services\WebProxyService\RoutingWithBikes.WebProxyService.Station.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

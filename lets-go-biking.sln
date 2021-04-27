@@ -17,6 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeavyClient", "HeavyClient\
 		{E54A91C9-D93E-43C6-BE05-EF3B695A0CA5} = {E54A91C9-D93E-43C6-BE05-EF3B695A0CA5}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingWithBikesHost", "RoutingWithBikesHost\RoutingWithBikesHost.csproj", "{E8F2A5DB-9F80-4D3D-8D1C-538626BC788D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E54A91C9-D93E-43C6-BE05-EF3B695A0CA5} = {E54A91C9-D93E-43C6-BE05-EF3B695A0CA5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProxyServiceHost", "WebProxyServiceHost\WebProxyServiceHost.csproj", "{AE600BE1-155D-442C-B167-B325902A1650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +46,14 @@ Global
 		{EBBF7193-D614-4F72-A9A3-12C8D181A5FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBF7193-D614-4F72-A9A3-12C8D181A5FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBF7193-D614-4F72-A9A3-12C8D181A5FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F2A5DB-9F80-4D3D-8D1C-538626BC788D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F2A5DB-9F80-4D3D-8D1C-538626BC788D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F2A5DB-9F80-4D3D-8D1C-538626BC788D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F2A5DB-9F80-4D3D-8D1C-538626BC788D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE600BE1-155D-442C-B167-B325902A1650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE600BE1-155D-442C-B167-B325902A1650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE600BE1-155D-442C-B167-B325902A1650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE600BE1-155D-442C-B167-B325902A1650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

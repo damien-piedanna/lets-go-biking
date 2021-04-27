@@ -1,10 +1,29 @@
 # Let's go Biking !
 > POLYTECH ~ SI4 ~ SOC/WS
 
-[Project](https://lms.univ-cotedazur.fr/course/view.php?id=4334)
+Calculate an itinerary using the bicycles offered by JC Decaux
 
-## Composants
+[Presentation page](https://lms.univ-cotedazur.fr/course/view.php?id=4334)
 
-* 2 Serveurs WCF
-* Client C#
-* Client Web
+## Components
+
+* 2 WCF Servers
+* Web Client
+* C# Client
+
+## How to run
+
+* (optional) Replace "chrome" by "firefox" if you prefer in run.bat
+* Double click on run.bat
+
+## How to use
+
+### Webclient
+
+* Fill a departure and arrival addresse in France such as "3 Rue Marie Anne du Boccage, 44000 Nantes" in the corresponding input
+* Click on the "Itinerary" button
+* Visualize the itinerary
+
+### C# Client
+
+* Follow the console instructions

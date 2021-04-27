@@ -15,7 +15,8 @@ namespace HeavyClient
             int choice = -1;
             while (choice != 3)
             {
-                Console.WriteLine("\n\nChoose an action : ");
+                Console.WriteLine("Let's Go Biking Heavy Client");
+                Console.WriteLine("\nChoose an action : ");
                 Console.WriteLine("1 -> Display an itinerary with bikes");
                 Console.WriteLine("2 -> Get stations logs");
                 Console.WriteLine("3 -> Quit");
