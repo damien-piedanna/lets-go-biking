@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="21977d3f-26f8-49af-a30f-25a5a33ee70f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7cb40bb5-3bcb-4819-af01-63a3124d46dd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="279f471e-1cd5-478e-b619-a0885b3bfa86" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="105b93d8-1716-4b56-ae6b-d61020f3e391" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/mex" />
+    <MetadataFile FileName="RoutingWithBikes.xsd" MetadataType="Schema" ID="81238aa7-914d-429d-bdc7-4e474865acd0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="03955447-601f-4756-b9aa-147acde38860" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

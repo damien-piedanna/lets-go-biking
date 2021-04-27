@@ -6,9 +6,9 @@ namespace WebProxyService
     public interface IJCDecauxService
     {
         [OperationContract]
-        Position GetNearestStationStartCoordinates(Position position);
+        Station GetNearestStationStart(Position position);
 
         [OperationContract]
-        Position GetNearestStationEndCoordinates(Position position);
+        Station GetNearestStationEnd(Position position);
     }
 }

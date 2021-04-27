@@ -6,6 +6,9 @@ using RoutingWithBikes.WebProxyService;
 
 namespace RoutingWithBikes
 {
+    /**
+     * Class allowing to use the open routes service API
+     */
     class OpenRouteServiceTools
     {
         private static readonly HttpClient client = new HttpClient();
@@ -15,6 +18,9 @@ namespace RoutingWithBikes
         private readonly Cache<Position> positionCache = new Cache<Position>(604800); //1 week cache
         private readonly Cache<ItineraryStep> ItineraryStepCache = new Cache<ItineraryStep>(604800); //1 week cache
 
+        /**
+         * Get position from address using OSM
+         */
         public Position getPosition(string address)
         {
             string url = baseURL + "geocode/search?api_key=" + apiKey + "&text=" + address;
@@ -52,17 +58,26 @@ namespace RoutingWithBikes
             return res;
         }
 
-        public ItineraryStep getFootItinary(Position start, Position end)
+        /**
+         * Get foot itinerary from 2 positions
+         */
+        public ItineraryStep getFootItinerary(Position start, Position end)
         {
-            return getItinary(start, end, "foot-walking");
+            return getItinerary(start, end, "foot-walking");
         }
 
-        public ItineraryStep getBikeItinary(Position start, Position end)
+        /**
+         * Get bike itinerary from 2 positions
+         */
+        public ItineraryStep getBikeItinerary(Position start, Position end)
         {
-            return getItinary(start, end, "cycling-regular");
+            return getItinerary(start, end, "cycling-regular");
         }
 
-        private ItineraryStep getItinary(Position start, Position end, string type)
+        /**
+         * Get itinerary from 2 positions using OSM
+         */
+        private ItineraryStep getItinerary(Position start, Position end, string type)
         {
             string url = baseURL + "v2/directions/" + type + "?api_key=" + apiKey 
                 + "&start=" + start.longitude.ToString().Replace(",", ".")

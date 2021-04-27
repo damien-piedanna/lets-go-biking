@@ -8,12 +8,6 @@ using Cache;
 
 namespace WebProxyService
 {
-    public class JCDecauxObject
-    {
-        protected static readonly HttpClient client = new HttpClient();
-        protected static readonly string apiKey = "a0dbd529c92077bf289fd7bee14fd1b6f0002eae";
-        protected static readonly string baseURL = "https://api.jcdecaux.com/vls/v3";
-    }
     [DataContract]
     public class Position
     {
@@ -26,11 +20,13 @@ namespace WebProxyService
         [DataMember]
         public string city { get; set; }
     }
+    [DataContract]
     public class Totalstands
     {
         [DataMember]
         public Availabilities availabilities { get; set; }
     }
+    [DataContract]
     public class Availabilities
     {
         [DataMember]
@@ -42,7 +38,8 @@ namespace WebProxyService
         [DataMember]
         public int electricalBikes { get; set; }
     }
-    public class Station : JCDecauxObject
+    [DataContract]
+    public class Station
     {
         [DataMember]
         public int number { get; set; }
@@ -73,17 +70,27 @@ namespace WebProxyService
 
     }
 
-    public class ListStation : JCDecauxObject
+    /**
+     * Represent a list of JCDecaux station
+     */
+    public class StationList
     {
+        protected static readonly HttpClient client = new HttpClient();
+        protected static readonly string apiKey = "a0dbd529c92077bf289fd7bee14fd1b6f0002eae";
+        protected static readonly string baseURL = "https://api.jcdecaux.com/vls/v3";
+
         private readonly string contract;
         private List<Station> stations = new List<Station>();
         private readonly Cache<Station> stationsDetailsCache = new Cache<Station>(60);
 
-        public ListStation(String contract) {
+        public StationList(String contract) {
             this.contract = contract;
             LoadFromAPI();
         }
 
+        /**
+         * Load station list from JCDecaux API
+         */
         public void LoadFromAPI()
         {
             try
@@ -107,6 +114,9 @@ namespace WebProxyService
             return stations.Count == 0;
         }
 
+        /**
+         * Refresh a specific station from JCDecaux API with is number
+         */
         public Station RefreshStation(int number)
         {
             try
@@ -126,6 +136,9 @@ namespace WebProxyService
             return null;
         }
 
+        /**
+         * Get the nearest station from position, with need bike or slot option
+         */
         public Station GetNearest(Position position, bool needBike, bool needSlot)
         {
             GeoCoordinate coord = new GeoCoordinate(position.latitude, position.longitude);
@@ -148,6 +161,7 @@ namespace WebProxyService
                     }
                 }
 
+                //Need to refresh station to verify status, need bike and need slot
                 Station refreshedStation = stationsDetailsCache.Get(nearestStation.number.ToString());
                 if (refreshedStation == null) {
                     refreshedStation = RefreshStation(nearestStation.number);
@@ -155,6 +169,7 @@ namespace WebProxyService
                 }
                 nearestStation = refreshedStation;
 
+                //Verify opening, need bike and need slot
                 if (
                     nearestStation.status != "OPEN" ||
                     (
@@ -164,6 +179,7 @@ namespace WebProxyService
                     )
                 )
                 {
+                    //if nearest station unusable, remove it from list an rerun
                     remainingStations.Remove(nearestStation);
                     if (remainingStations.Count == 0) {
                         return null;

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StationsLog.cs" />
     <Compile Include="PositionGeoJSON.cs" />
     <Compile Include="ItineraryGeoJSON.cs" />
     <Compile Include="OpenRouteServiceTools.cs" />
@@ -63,7 +64,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Connected Services\WebProxyService\JCDecauxService.wsdl" />
-    <None Include="Connected Services\WebProxyService\RoutingWithBikes.WebProxyService.Position.datasource">
+    <None Include="Connected Services\WebProxyService\RoutingWithBikes.WebProxyService.Station.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WebProxyService\WebProxyService.xsd">

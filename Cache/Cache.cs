@@ -3,6 +3,9 @@ using System.Runtime.Caching;
 
 namespace Cache
 {
+    /**
+     * Generic cache wrapper
+     */
     public class Cache<T>
     {
         private readonly ObjectCache cache = MemoryCache.Default;

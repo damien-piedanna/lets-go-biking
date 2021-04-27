@@ -7,32 +7,32 @@
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WebProxyService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebProxyService" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IJCDecauxService_GetNearestStationStartCoordinates_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNearestStationStartCoordinates" />
+  <wsdl:message name="IJCDecauxService_GetNearestStationStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestStationStart" />
   </wsdl:message>
-  <wsdl:message name="IJCDecauxService_GetNearestStationStartCoordinates_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNearestStationStartCoordinatesResponse" />
+  <wsdl:message name="IJCDecauxService_GetNearestStationStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestStationStartResponse" />
   </wsdl:message>
-  <wsdl:message name="IJCDecauxService_GetNearestStationEndCoordinates_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNearestStationEndCoordinates" />
+  <wsdl:message name="IJCDecauxService_GetNearestStationEnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestStationEnd" />
   </wsdl:message>
-  <wsdl:message name="IJCDecauxService_GetNearestStationEndCoordinates_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNearestStationEndCoordinatesResponse" />
+  <wsdl:message name="IJCDecauxService_GetNearestStationEnd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestStationEndResponse" />
   </wsdl:message>
   <wsdl:portType name="IJCDecauxService">
-    <wsdl:operation name="GetNearestStationStartCoordinates">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinates" message="tns:IJCDecauxService_GetNearestStationStartCoordinates_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinatesResponse" message="tns:IJCDecauxService_GetNearestStationStartCoordinates_OutputMessage" />
+    <wsdl:operation name="GetNearestStationStart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationStart" message="tns:IJCDecauxService_GetNearestStationStart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationStartResponse" message="tns:IJCDecauxService_GetNearestStationStart_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetNearestStationEndCoordinates">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinates" message="tns:IJCDecauxService_GetNearestStationEndCoordinates_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinatesResponse" message="tns:IJCDecauxService_GetNearestStationEndCoordinates_OutputMessage" />
+    <wsdl:operation name="GetNearestStationEnd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationEnd" message="tns:IJCDecauxService_GetNearestStationEnd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJCDecauxService/GetNearestStationEndResponse" message="tns:IJCDecauxService_GetNearestStationEnd_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SoapEndPnt" type="tns:IJCDecauxService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetNearestStationStartCoordinates">
-      <soap:operation soapAction="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinates" style="document" />
+    <wsdl:operation name="GetNearestStationStart">
+      <soap:operation soapAction="http://tempuri.org/IJCDecauxService/GetNearestStationStart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -40,8 +40,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNearestStationEndCoordinates">
-      <soap:operation soapAction="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinates" style="document" />
+    <wsdl:operation name="GetNearestStationEnd">
+      <soap:operation soapAction="http://tempuri.org/IJCDecauxService/GetNearestStationEnd" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

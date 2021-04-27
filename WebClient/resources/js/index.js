@@ -108,7 +108,7 @@
   */
   function resetItinerary() {
     $('#itineraryDuration').empty();
-    $('#itineraryDuration').empty();
+    $('#itineraryDistance').empty();
     $('#itinerarySteps').empty();
     if (markers.length > 0) {
         markers.forEach((marker) => {

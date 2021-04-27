@@ -11,6 +11,9 @@ namespace RoutingWithBikes
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "/itinerary?departureAddress={departureAddress}&arrivalAddress={arrivalAddress}")]
         Itinerary GetItinerary(string departureAddress, string arrivalAddress);
+
+        [OperationContract]
+        StationsLog GetStationsLog();
     }
     [DataContract]
     public class Itinerary

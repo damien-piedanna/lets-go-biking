@@ -90,21 +90,252 @@ namespace RoutingWithBikes.WebProxyService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Station", Namespace="http://schemas.datacontract.org/2004/07/WebProxyService")]
+    [System.SerializableAttribute()]
+    public partial class Station : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int numberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private RoutingWithBikes.WebProxyService.Position positionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private RoutingWithBikes.WebProxyService.Totalstands totalStandsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int number {
+            get {
+                return this.numberField;
+            }
+            set {
+                if ((this.numberField.Equals(value) != true)) {
+                    this.numberField = value;
+                    this.RaisePropertyChanged("number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RoutingWithBikes.WebProxyService.Position position {
+            get {
+                return this.positionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.positionField, value) != true)) {
+                    this.positionField = value;
+                    this.RaisePropertyChanged("position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.statusField, value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RoutingWithBikes.WebProxyService.Totalstands totalStands {
+            get {
+                return this.totalStandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.totalStandsField, value) != true)) {
+                    this.totalStandsField = value;
+                    this.RaisePropertyChanged("totalStands");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Totalstands", Namespace="http://schemas.datacontract.org/2004/07/WebProxyService")]
+    [System.SerializableAttribute()]
+    public partial class Totalstands : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private RoutingWithBikes.WebProxyService.Availabilities availabilitiesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RoutingWithBikes.WebProxyService.Availabilities availabilities {
+            get {
+                return this.availabilitiesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.availabilitiesField, value) != true)) {
+                    this.availabilitiesField = value;
+                    this.RaisePropertyChanged("availabilities");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Availabilities", Namespace="http://schemas.datacontract.org/2004/07/WebProxyService")]
+    [System.SerializableAttribute()]
+    public partial class Availabilities : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int bikesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int electricalBikesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int standsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int bikes {
+            get {
+                return this.bikesField;
+            }
+            set {
+                if ((this.bikesField.Equals(value) != true)) {
+                    this.bikesField = value;
+                    this.RaisePropertyChanged("bikes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int electricalBikes {
+            get {
+                return this.electricalBikesField;
+            }
+            set {
+                if ((this.electricalBikesField.Equals(value) != true)) {
+                    this.electricalBikesField = value;
+                    this.RaisePropertyChanged("electricalBikes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int stands {
+            get {
+                return this.standsField;
+            }
+            set {
+                if ((this.standsField.Equals(value) != true)) {
+                    this.standsField = value;
+                    this.RaisePropertyChanged("stands");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebProxyService.IJCDecauxService")]
     public interface IJCDecauxService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinates", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinatesResponse")]
-        RoutingWithBikes.WebProxyService.Position GetNearestStationStartCoordinates(RoutingWithBikes.WebProxyService.Position position);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationStart", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationStartResponse")]
+        RoutingWithBikes.WebProxyService.Station GetNearestStationStart(RoutingWithBikes.WebProxyService.Position position);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinates", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationStartCoordinatesResponse")]
-        System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Position> GetNearestStationStartCoordinatesAsync(RoutingWithBikes.WebProxyService.Position position);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationStart", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationStartResponse")]
+        System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Station> GetNearestStationStartAsync(RoutingWithBikes.WebProxyService.Position position);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinates", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinatesResponse")]
-        RoutingWithBikes.WebProxyService.Position GetNearestStationEndCoordinates(RoutingWithBikes.WebProxyService.Position position);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationEnd", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationEndResponse")]
+        RoutingWithBikes.WebProxyService.Station GetNearestStationEnd(RoutingWithBikes.WebProxyService.Position position);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinates", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationEndCoordinatesResponse")]
-        System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Position> GetNearestStationEndCoordinatesAsync(RoutingWithBikes.WebProxyService.Position position);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJCDecauxService/GetNearestStationEnd", ReplyAction="http://tempuri.org/IJCDecauxService/GetNearestStationEndResponse")]
+        System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Station> GetNearestStationEndAsync(RoutingWithBikes.WebProxyService.Position position);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,20 +365,20 @@ namespace RoutingWithBikes.WebProxyService {
                 base(binding, remoteAddress) {
         }
         
-        public RoutingWithBikes.WebProxyService.Position GetNearestStationStartCoordinates(RoutingWithBikes.WebProxyService.Position position) {
-            return base.Channel.GetNearestStationStartCoordinates(position);
+        public RoutingWithBikes.WebProxyService.Station GetNearestStationStart(RoutingWithBikes.WebProxyService.Position position) {
+            return base.Channel.GetNearestStationStart(position);
         }
         
-        public System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Position> GetNearestStationStartCoordinatesAsync(RoutingWithBikes.WebProxyService.Position position) {
-            return base.Channel.GetNearestStationStartCoordinatesAsync(position);
+        public System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Station> GetNearestStationStartAsync(RoutingWithBikes.WebProxyService.Position position) {
+            return base.Channel.GetNearestStationStartAsync(position);
         }
         
-        public RoutingWithBikes.WebProxyService.Position GetNearestStationEndCoordinates(RoutingWithBikes.WebProxyService.Position position) {
-            return base.Channel.GetNearestStationEndCoordinates(position);
+        public RoutingWithBikes.WebProxyService.Station GetNearestStationEnd(RoutingWithBikes.WebProxyService.Position position) {
+            return base.Channel.GetNearestStationEnd(position);
         }
         
-        public System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Position> GetNearestStationEndCoordinatesAsync(RoutingWithBikes.WebProxyService.Position position) {
-            return base.Channel.GetNearestStationEndCoordinatesAsync(position);
+        public System.Threading.Tasks.Task<RoutingWithBikes.WebProxyService.Station> GetNearestStationEndAsync(RoutingWithBikes.WebProxyService.Position position) {
+            return base.Channel.GetNearestStationEndAsync(position);
         }
     }
 }
