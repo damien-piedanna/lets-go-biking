@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using HeavyClient.RoutingWithBikes;
 
 namespace HeavyClient
@@ -13,13 +11,14 @@ namespace HeavyClient
         static void Main(string[] args)
         {
             int choice = -1;
-            while (choice != 3)
+            while (choice != 4)
             {
-                Console.WriteLine("Let's Go Biking Heavy Client");
+                Console.WriteLine("\nLet's Go Biking Heavy Client");
                 Console.WriteLine("\nChoose an action : ");
                 Console.WriteLine("1 -> Display an itinerary with bikes");
-                Console.WriteLine("2 -> Get stations logs");
-                Console.WriteLine("3 -> Quit");
+                Console.WriteLine("2 -> Visualize stations logs");
+                Console.WriteLine("3 -> Save stations logs");
+                Console.WriteLine("4 -> Quit");
 
                 choice = Int16.Parse(Console.ReadLine());
 
@@ -30,6 +29,9 @@ namespace HeavyClient
                         break;
                     case 2:
                         getStationsLogs();
+                        break;
+                    case 3:
+                        saveStationsLogs();
                         break;
                     default:
                         Console.WriteLine("Invalid choice");
@@ -95,11 +97,41 @@ namespace HeavyClient
         {
             StationsLog stationsLog = client.GetStationsLog();
 
-            Console.WriteLine("Usages:");
+            Console.WriteLine("\nUsages:");
             foreach (var item in stationsLog.nbUsage)
             {
                 Console.WriteLine(item.Key + " => " + item.Value);
             }
+        }
+
+        /**
+         * Get and save stations logs in a file
+         */
+        static void saveStationsLogs()
+        {
+            StationsLog stationsLog = client.GetStationsLog();
+
+            if (stationsLog.nbUsage.Count != 0)
+            {
+                var builder = new StringBuilder();
+                builder.AppendLine("Station;Nb Usage");
+                foreach (var item in stationsLog.nbUsage)
+                {
+                    builder.AppendLine($"{item.Key};{item.Value}");
+                }
+
+                Console.WriteLine("\nSaving directory :");
+                string excelPath = Console.ReadLine();
+                excelPath += "/StationLogs_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv";
+
+                File.WriteAllText(excelPath, builder.ToString());
+                Console.WriteLine("\nData saved!");
+            } else
+            {
+                Console.WriteLine("\nThere is no log for the moment.");
+            }
+
+
         }
     }
 }

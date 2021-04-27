@@ -13,10 +13,15 @@ Calculate an itinerary using the bicycles offered by JC Decaux
 
 ## How to run
 
+* Build lets-go-biking solution
 * (optional) Replace "chrome" by "firefox" if you prefer in run.bat
 * Double click on run.bat
 
 ## How to use
+
+### Postman
+
+* Use this url : http://localhost:8733/Design_Time_Addresses/RoutingWithBikes/ItineraryService/rest/itinerary?start=START_ADRESS&end=END_ADRESS
 
 ### Webclient
 

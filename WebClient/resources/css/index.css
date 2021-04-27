@@ -67,7 +67,6 @@ body {
    text-align: center;
 }
 
-
 .marker-pin-start + i:before, .marker-pin-end + i:before {
   content: "\f11e";
 }
