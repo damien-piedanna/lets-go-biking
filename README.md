@@ -32,3 +32,5 @@ Calculate an itinerary using the bicycles offered by JC Decaux
 ### C# Client
 
 * Follow the console instructions
+
+![Web client](doc/index.png)
